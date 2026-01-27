@@ -77,6 +77,7 @@ sudo dnf -y install git || sudo yum -y install git
 git --version
 
 -リポジトリをクローン
+
 cd ~
 rm -rf kadai
 git clone https://github.com/rrroko/kadai.git
