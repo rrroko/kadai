@@ -114,4 +114,4 @@ docker compose ps　←　ちゃんと起動していればOK
 docker compose exec -T mysql mysql -ukadai -ppassword kadai_db < init.sql
 ```
 ## 8.サイト確認
-http://<PublicIP>/
+http://PublicIP/
