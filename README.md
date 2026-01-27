@@ -41,8 +41,11 @@ ssh -i C:\Users\Desktop\（キーペア作成時に自動でダウンロード�
 -下のコードをPowerShellのSSHで入力
 
 sudo dnf -y update || sudo yum -y update
+
 sudo dnf -y install docker || sudo yum -y install docker
+
 sudo systemctl enable --now docker
+
 sudo usermod -aG docker ec2-user
 
 sudo dnf -y install curl || sudo yum -y install curl
@@ -50,6 +53,7 @@ sudo dnf -y install curl || sudo yum -y install curl
 -Docker composeをインストール
 
 ARCH=$(uname -m)
+
 case "$ARCH" in
   x86_64)   BIN=docker-compose-linux-x86_64 ;;
   aarch64)  BIN=docker-compose-linux-aarch64 ;;
@@ -57,8 +61,10 @@ case "$ARCH" in
 esac
 
 sudo mkdir -p /usr/libexec/docker/cli-plugins
+
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.27.0/$BIN" \
   -o /usr/libexec/docker/cli-plugins/docker-compose
+  
 sudo chmod +x /usr/libexec/docker/cli-plugins/docker-compose
 
 -反映するために再起動
@@ -74,13 +80,17 @@ ssh -i C:\Users\Desktop\（キーペア作成時に自動でダウンロード�
 -gitを入れる
 
 sudo dnf -y install git || sudo yum -y install git
+
 git --version
 
 -リポジトリをクローン
 
 cd ~
+
 rm -rf kadai
+
 git clone https://github.com/rrroko/kadai.git
+
 cd kadai
 
 ## 5.画像フォルダの準備
