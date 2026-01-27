@@ -36,7 +36,7 @@ ssh -i C:\Users\Desktop\（キーペア作成時に自動でダウンロード�
 
   接続できたらOK
 
-##　3. Dockerのインストール
+##  3. Dockerのインストール
 -docker導入
 -下のコードをPowerShellのSSHで入力
 
@@ -70,7 +70,7 @@ ssh -i C:\Users\Desktop\（キーペア作成時に自動でダウンロード�
        key.pemがある場所
 
 
-##　4.gitのインストール
+## 4.gitのインストール
 -gitを入れる
 
 sudo dnf -y install git || sudo yum -y install git
@@ -82,21 +82,21 @@ rm -rf kadai
 git clone https://github.com/rrroko/kadai.git
 cd kadai
 
-##　5.画像フォルダの準備
+## 5.画像フォルダの準備
 -画像フォルダの権限
 
 sudo chmod -R 777 public/upload/image
 
-##　6.ビルドと起動
+## 6.ビルドと起動
 docker compose up -d --build
 
 -状態の確認
 docker compose ps　←　ちゃんと起動していればOK
 
-##　7.DBの作成
+## 7.DBの作成
 -init.sqlを適応
 
 docker compose exec -T mysql mysql -ukadai -ppassword kadai_db < init.sql
 
-##　8.サイト確認
+## 8.サイト確認
 http://<PublicIP>/
