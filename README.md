@@ -54,7 +54,6 @@ sudo dnf -y install curl || sudo yum -y install curl
 -Docker composeをインストール
 ```bash
 ARCH=$(uname -m)
-
 case "$ARCH" in
   x86_64)   BIN=docker-compose-linux-x86_64 ;;
   aarch64)  BIN=docker-compose-linux-aarch64 ;;
