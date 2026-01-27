@@ -1,0 +1,3 @@
+/upload/image/*
+!/upload/image/.gitkeep
+.env

@@ -1,0 +1,43 @@
+services:
+  web:
+    build: .
+    container_name: sns-web
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+    environment:
+      DB_HOST: mysql
+      DB_NAME: kadai_db
+      DB_USER: kadai
+      DB_PASS: password
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: sns-mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: kadai_db
+      MYSQL_USER: kadai
+      MYSQL_PASSWORD: password
+      TZ: Asia/Tokyo
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: sns-pma
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: rootpass
+    depends_on:
+      - mysql
+
+volumes:
+  dbdata:
