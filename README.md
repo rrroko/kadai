@@ -50,9 +50,9 @@ sudo systemctl enable --now docker
 sudo usermod -aG docker ec2-user
 
 sudo dnf -y install curl || sudo yum -y install curl
-
+```
 -Docker composeをインストール
-
+```bash
 ARCH=$(uname -m)
 
 case "$ARCH" in
@@ -67,10 +67,11 @@ sudo curl -L "https://github.com/docker/compose/releases/download/v2.27.0/$BIN" 
   -o /usr/libexec/docker/cli-plugins/docker-compose
   
 sudo chmod +x /usr/libexec/docker/cli-plugins/docker-compose
-
+```
 -反映するために再起動
+```bash
 exit
-
+```
 -もう一度SSHに入る
 ssh -i C:\Users\Desktop\（キーペア作成時に自動でダウンロードされたファイル）key.pem ec2-user@<PublicIP>
 　　　　　　　↑
@@ -79,13 +80,14 @@ ssh -i C:\Users\Desktop\（キーペア作成時に自動でダウンロード�
 
 ## 4.gitのインストール
 -gitを入れる
+```bash
 
 sudo dnf -y install git || sudo yum -y install git
 
 git --version
-
+```
 -リポジトリをクローン
-
+```bash
 cd ~
 
 rm -rf kadai
@@ -93,22 +95,24 @@ rm -rf kadai
 git clone https://github.com/rrroko/kadai.git
 
 cd kadai
-
+```
 ## 5.画像フォルダの準備
 -画像フォルダの権限
-
+```bash
 sudo chmod -R 777 public/upload/image
-
+```
 ## 6.ビルドと起動
+```bash
 docker compose up -d --build
-
+```
 -状態の確認
+```bash
 docker compose ps　←　ちゃんと起動していればOK
-
+```
 ## 7.DBの作成
 -init.sqlを適応
-
+```bash
 docker compose exec -T mysql mysql -ukadai -ppassword kadai_db < init.sql
-
+```
 ## 8.サイト確認
 http://<PublicIP>/
