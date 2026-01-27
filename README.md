@@ -40,6 +40,7 @@ ssh -i C:\Users\Desktop\（キーペア作成時に自動でダウンロード�
 -docker導入
 -下のコードをPowerShellのSSHで入力
 
+```bash
 sudo dnf -y update || sudo yum -y update
 
 sudo dnf -y install docker || sudo yum -y install docker
