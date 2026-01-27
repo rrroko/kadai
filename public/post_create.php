@@ -35,6 +35,11 @@ try {
 
             $tmp = $_FILES['images']['tmp_name'][$i];
 
+            error_log("name=" . $_FILES['images']['name'][$i]);
+            error_log("type=" . $_FILES['images']['type'][$i]);
+            error_log("size=" . $_FILES['images']['size'][$i]);
+            error_log("tmp=" . $tmp);
+
             $info = getimagesize($tmp);
             if ($info === false) {
                 exit('画像ファイルではありません');
