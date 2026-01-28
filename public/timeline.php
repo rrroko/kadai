@@ -22,7 +22,6 @@ JOIN users u ON u.id = p.user_id
 JOIN follows f ON f.followee_id = p.user_id
 WHERE f.follower_id = :me
 ORDER BY p.created_at DESC
-LIMIT 50
 ";
 //実行して配列に
 $stmt = $pdo->prepare($sql);
