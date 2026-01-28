@@ -30,7 +30,7 @@ EC2を開いて
 
 PowerShellを開いて
 
-ssh ec2-user@<PublicIP> -i C:\Users\Desktop\（キーペア作成時に自動でダウンロードされたファイル）key.pem
+ssh ec2-user@PublicIP -i C:\Users\Desktop\（キーペア作成時に自動でダウンロードされたファイル）key.pem
 　　　　　　　                           ↑
                                  key.pemがある場所
 
@@ -73,7 +73,7 @@ exit
 ```
 -もう一度SSHに入る
 
-ssh ec2-user@<PublicIP> -i C:\Users\Desktop\（キーペア作成時に自動でダウンロードされたファイル）key.pem
+ssh ec2-user@PublicIP -i C:\Users\Desktop\（キーペア作成時に自動でダウンロードされたファイル）key.pem
 　　　　　　                             　↑
                                      key.pemがある場所
 
