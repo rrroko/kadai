@@ -30,9 +30,9 @@ EC2を開いて
 
 PowerShellを開いて
 
-ssh -i C:\Users\Desktop\（キーペア作成時に自動でダウンロードされたファイル）key.pem ec2-user@<PublicIP>
-　　　　　　　↑
-       key.pemがある場所
+ssh ec2-user@<PublicIP> -i C:\Users\Desktop\（キーペア作成時に自動でダウンロードされたファイル）key.pem
+　　　　　　　                           ↑
+                                 key.pemがある場所
 
   接続できたらOK
 
@@ -72,9 +72,10 @@ sudo chmod +x /usr/libexec/docker/cli-plugins/docker-compose
 exit
 ```
 -もう一度SSHに入る
-ssh -i C:\Users\Desktop\（キーペア作成時に自動でダウンロードされたファイル）key.pem ec2-user@<PublicIP>
-　　　　　　　↑
-       key.pemがある場所
+
+ssh ec2-user@<PublicIP> -i C:\Users\Desktop\（キーペア作成時に自動でダウンロードされたファイル）key.pem
+　　　　　　                             　↑
+                                     key.pemがある場所
 
 
 ## 4.gitのインストール
