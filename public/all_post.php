@@ -55,7 +55,7 @@ if (count($postIds) > 0) {
   <title>全投稿</title>
 </head>
 <body>
-<h1>全投稿一覧（フォロー不要）</h1>
+<h1>全投稿一覧</h1>
 
 <nav>
   <a href="timeline.php">タイムライン</a> 
