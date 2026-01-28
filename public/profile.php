@@ -63,7 +63,7 @@ $users = $stmt->fetchAll();
   <title>ユーザー一覧</title>
 </head>
 <body>
-<h1>ユーザー一覧（フォロー）</h1>
+<h1>ユーザー一覧</h1>
 
 <nav>
   <a href="timeline.php">タイムライン</a> |
